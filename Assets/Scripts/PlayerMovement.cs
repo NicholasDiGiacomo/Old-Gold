@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 1f;
+    [SerializeField] float moveSpeed = 3f;
 
     [SerializeField] float jumpSpeed = 5f;
     [SerializeField] float climbSpeed = 5f;
@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     const string LADDER_STRING = "Ladder";
     const string ENEMY_STRING = "Enemy";
     const string HAZZARD_STRING = "Hazzard";
+    const string LAVA_WALL = "Lava";
 
 
     private void Start() 
@@ -30,13 +31,15 @@ public class PlayerMovement : MonoBehaviour
 
         baseGravity = rB.gravityScale;
     }
-    
-        
-    
 
-   
     void Update()
     {
+
+        if (Input.GetKeyDown((KeyCode)Key.Space))
+        {
+            rB.linearVelocity = new Vector2(0, jumpSpeed);
+        }
+
         if (!isAlive)
         {
             return;
@@ -120,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Die()
     {
-        if(mainCollider.IsTouchingLayers(LayerMask.GetMask(ENEMY_STRING, HAZZARD_STRING)))
+        if(mainCollider.IsTouchingLayers(LayerMask.GetMask(ENEMY_STRING, HAZZARD_STRING, LAVA_WALL)))
         {
             isAlive = false;
             // myAnimator.SetTrigger("Dying");
