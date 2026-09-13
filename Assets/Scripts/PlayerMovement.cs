@@ -4,31 +4,69 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
+[Header("Jump functions")]
+    [SerializeField] float jumpForce = 5f;
+    [SerializeField] bool isGrounded; 
+    [SerializeField] bool wasGrounded; 
+    [SerializeField] Transform groundCheck;
+    [SerializeField] float checkRadius = 0.2f;
+    [SerializeField]  LayerMask whatIsGround;
 
-    [SerializeField] float jumpSpeed = 5f;
+    [SerializeField] int maxJumpCount = 2; 
+    int jumpCount; 
     [SerializeField] float climbSpeed = 5f;
 
     [SerializeField] float baseGravity = 5f;
+    
+
+    
+    [SerializeField] Rigidbody2D rb;
+    
+    
+    MaineController controller; 
 
     Vector2 moveInput;
-    Rigidbody2D rB;
-    
-    BoxCollider2D mainCollider;
+    Vector2 targetVelosity;
+    Vector2 velosityRef;
+    [SerializeField] float smoothTime = 0.2f; 
+
+    // bool facingRight = true; 
+   
 
     bool isAlive = true;
+    
 
     const string GROUND_STRING = "Ground";
     const string LADDER_STRING = "Ladder";
     const string ENEMY_STRING = "Enemy";
     const string HAZZARD_STRING = "Hazzard";
 
+    void Awake()
+    {
+        controller = new MaineController();
+        controller.Player.Jump.performed += OnJump;
+    }
+    void OnEnable()
+    {
+        controller.Enable();
+        
+    }
+
+    void OnDisable()
+    {
+        controller.Disable();
+         controller.Player.Jump.performed -= OnJump;
+    }
+
+
 
     private void Start() 
     {
-        rB = GetComponent<Rigidbody2D>();
-        mainCollider = GetComponent<BoxCollider2D>();
+        // rb = GetComponent<Rigidbody2D>();
+        // mainCollider = GetComponent<BoxCollider2D>();
+        // extraJumps = extraJumpsValue;
 
-        baseGravity = rB.gravityScale;
+        // baseGravity = rb.gravityScale;
     }
     
         
@@ -37,96 +75,109 @@ public class PlayerMovement : MonoBehaviour
    
     void Update()
     {
-        if (!isAlive)
+
+            moveInput = controller.Player.Move.ReadValue<Vector2>();
+
+
+         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+
+         if(!wasGrounded && isGrounded)
         {
-            return;
+            jumpCount = 0; 
         }
-        Run();
-        FlipSprite();
+
+        wasGrounded = isGrounded;
+
+        
+         if (!isAlive)
+         {
+             return;
+         }
+        //  Run();
+         FlipSprite();
         ClimbLadder();
         Die(); 
     }
-
-    void OnMove(InputValue value)
+    void FixedUpdate()
     {
-        if (!isAlive)
-        {
-            return;
-        }
-        moveInput = value.Get<Vector2>();
-        
+        targetVelosity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocityY);
+        rb.linearVelocity = Vector2.SmoothDamp(rb.linearVelocity, targetVelosity, ref velosityRef, smoothTime);
     }
 
-     void OnJump(InputValue value)
-    {
-        if (!isAlive)
-        {
-            return;
-        }
+    
 
-        if (!mainCollider.IsTouchingLayers(LayerMask.GetMask(GROUND_STRING)))
-        {
+     void OnJump(InputAction.CallbackContext context)
+    {
+         if (!isAlive)
+         {
             return;
+         }
+
+        if (jumpCount < maxJumpCount)
+         {
+            isGrounded = false;
+            jumpCount++;
+            rb.linearVelocityY = 0; 
+            rb.linearVelocityY = jumpForce;
         }
        
-            if(value.isPressed)
-        {
-            rB.linearVelocity += new Vector2 (0f, jumpSpeed);
-        }
+           
         
     }
 
      void ClimbLadder()
     {
-         if (!mainCollider.IsTouchingLayers(LayerMask.GetMask(LADDER_STRING)))
-        {
-            rB.gravityScale = baseGravity;
-            return;
-            // myAnimator.SetBool("isClimbing", false);
-        }
-       Vector2 climbVelocity = new Vector2 ( rB.linearVelocity.x, moveInput.y * climbSpeed);
-        rB.linearVelocity = climbVelocity;
-        rB.gravityScale = 0f;
+    //      if (!mainCollider.IsTouchingLayers(LayerMask.GetMask(LADDER_STRING)))
+    //     {
+    //         rb.gravityScale = baseGravity;
+    //         return;
+    //         // myAnimator.SetBool("isClimbing", false);
+    //     }
+    //    Vector2 climbVelocity = new Vector2 ( rb.linearVelocity.x, moveInput.y * climbSpeed);
+    //     rb.linearVelocity = climbVelocity;
+    //     rb.gravityScale = 0f;
 
-        bool hasVertacleSpeed = Mathf.Abs(rB.linearVelocity.y) > Mathf.Epsilon;
+    //     bool hasVertacleSpeed = Mathf.Abs(rb.linearVelocity.y) > Mathf.Epsilon;
 
        
             // myAnimator.SetBool("isClimbing", hasVertacleSpeed);
     }
 
-     void Run()
-    {
-        Vector2 playerVelocity = new Vector2 (moveInput.x * moveSpeed , rB.linearVelocity.y);
-        rB.linearVelocity = playerVelocity;
+    //  void Run()
+    // {
+    //     Vector2 playerVelocity = new Vector2 (moveInput.x * moveSpeed , rb.linearVelocity.y);
+    //     rb.linearVelocity = playerVelocity;
 
-        bool hasHorozontalSpeed = Mathf.Abs(rB.linearVelocity.x) > Mathf.Epsilon;
+    //     bool hasHorozontalSpeed = Mathf.Abs(rb.linearVelocity.x) > Mathf.Epsilon;
 
        
-            // myAnimator.SetBool("isRunning", hasHorozontalSpeed);
+    //         // myAnimator.SetBool("isRunning", hasHorozontalSpeed);
         
         
-    }
+    // }
 
      void FlipSprite()
     {
-        bool hasHorozontalSpeed = Mathf.Abs(rB.linearVelocity.x) > Mathf.Epsilon;
+        bool hasHorozontalSpeed = Mathf.Abs(rb.linearVelocity.x) > Mathf.Epsilon;
 
         if(hasHorozontalSpeed)
         {
-            transform.localScale = new Vector2(Mathf.Sign(rB.linearVelocity.x), 1f);
+            transform.localScale = new Vector2(Mathf.Sign(rb.linearVelocity.x), 1f);
         }
         
     }
 
+    
+
     void Die()
     {
-        if(mainCollider.IsTouchingLayers(LayerMask.GetMask(ENEMY_STRING, HAZZARD_STRING)))
-        {
-            isAlive = false;
-            // myAnimator.SetTrigger("Dying");
-            // rB.linearVelocity = deathKick;
-            // FindAnyObjectByType<GameSession>().ProcessPlayerDeath(); 
+        // if(mainCollider.IsTouchingLayers(LayerMask.GetMask(ENEMY_STRING, HAZZARD_STRING)))
+        // {
+        //     isAlive = false;
+        //     // myAnimator.SetTrigger("Dying");
+        //     // rB.linearVelocity = deathKick;
+        //     // FindAnyObjectByType<GameSession>().ProcessPlayerDeath(); 
            
-        }
+        // }
     }
 }
