@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 456698134}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -162,9 +162,9 @@ GameObject:
   - component: {fileID: 501712191}
   - component: {fileID: 501712190}
   - component: {fileID: 501712188}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerRoot
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,6 +194,7 @@ MonoBehaviour:
   climbSpeed: 5
   baseGravity: 5
   rb: {fileID: 501712190}
+  goldWeight: 0
   smoothTime: 0.2
 --- !u!50 &501712190
 Rigidbody2D:
@@ -465,7 +466,7 @@ GameObject:
   m_Component:
   - component: {fileID: 522665603}
   - component: {fileID: 522665604}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: PlayerCapsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +694,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1044950529}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MeshRoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -823,7 +824,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1092835090}
   - component: {fileID: 1092835091}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1086,7 +1087,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1737054355}
   - component: {fileID: 1737054356}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1168,6 +1169,63 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!1001 &3191818767691463082
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1602627244640056952, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602627244640056952, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.9537
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602627244640056952, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602627244640056952, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602627244640056952, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602627244640056952, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602627244640056952, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602627244640056952, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602627244640056952, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1602627244640056952, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2729742575668070382, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
+      propertyPath: m_Name
+      value: GoldPickup
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a08ecd7d3b63c804184f0132d001fbfd, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1176,3 +1234,4 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1703476488}
   - {fileID: 501712192}
+  - {fileID: 3191818767691463082}

@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
 
     
     [SerializeField] Rigidbody2D rb;
+
+    [SerializeField] int goldWeight;
+    // [SerializeField] int overEncumbered = 5;
     
     
     MaineController controller; 
@@ -30,8 +33,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 velosityRef;
     [SerializeField] float smoothTime = 0.2f; 
 
-    // bool facingRight = true; 
-   
+    GoldPickup goldPickup;
 
     bool isAlive = true;
     
@@ -62,6 +64,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start() 
     {
+        goldPickup = GetComponent<GoldPickup>();
         // rb = GetComponent<Rigidbody2D>();
         // mainCollider = GetComponent<BoxCollider2D>();
         // extraJumps = extraJumpsValue;
@@ -78,7 +81,8 @@ public class PlayerMovement : MonoBehaviour
 
             moveInput = controller.Player.Move.ReadValue<Vector2>();
 
-
+// checks to see if player is touching the ground there is a gameobject at base of player 
+// also checks if what player standing on is in the groumd layer
          isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
 
          if(!wasGrounded && isGrounded)
@@ -112,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
          {
             return;
          }
-
+// allows player to jump until jumpcount is met 
         if (jumpCount < maxJumpCount)
          {
             isGrounded = false;
@@ -123,6 +127,17 @@ public class PlayerMovement : MonoBehaviour
        
            
         
+    }
+
+    void OverEncombered(int encumbered)
+    {
+        // a bit stuck here just need to figure out how to properly refrence goldpickup class
+        //my current plan is to get the refrence from gold pickup which adds a point to goldWeight
+        //once over the thresh hold it adds a jumpcount thus diabling double jump
+        if(goldWeight < 5)
+        {
+            jumpCount++;
+        }
     }
 
      void ClimbLadder()
