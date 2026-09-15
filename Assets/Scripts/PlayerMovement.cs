@@ -4,16 +4,21 @@ using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 1f;
-[Header("Jump functions")]
+    [SerializeField] float overWeightMoveSpeed = 0.5f;
+    [SerializeField] int overWeightLimit = 5;
+    [Header("Jump functions")]
     [SerializeField] float jumpForce = 5f;
     [SerializeField] bool isGrounded; 
     [SerializeField] bool wasGrounded; 
     [SerializeField] Transform groundCheck;
     [SerializeField] float checkRadius = 0.2f;
     [SerializeField]  LayerMask whatIsGround;
+    [SerializeField] private PlayerWeight playerWeight;
 
-    [SerializeField] int maxJumpCount = 2; 
-    int jumpCount; 
+    
+   
+    private int normalMaxJumps = 2;
+    private int jumpCount;
     [SerializeField] float climbSpeed = 5f;
 
     [SerializeField] float baseGravity = 5f;
@@ -22,8 +27,7 @@ public class PlayerMovement : MonoBehaviour
     
     [SerializeField] Rigidbody2D rb;
 
-    [SerializeField] int goldWeight;
-    // [SerializeField] int overEncumbered = 5;
+    
     
     
     MaineController controller; 
@@ -33,7 +37,7 @@ public class PlayerMovement : MonoBehaviour
     Vector2 velosityRef;
     [SerializeField] float smoothTime = 0.2f; 
 
-    GoldPickup goldPickup;
+    
 
     bool isAlive = true;
     
@@ -64,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start() 
     {
-        goldPickup = GetComponent<GoldPickup>();
+        
         // rb = GetComponent<Rigidbody2D>();
         // mainCollider = GetComponent<BoxCollider2D>();
         // extraJumps = extraJumpsValue;
@@ -103,42 +107,63 @@ public class PlayerMovement : MonoBehaviour
         Die(); 
     }
     void FixedUpdate()
+{
+    targetVelosity = new Vector2(
+        moveInput.x * GetMoveSpeed(), 
+        rb.linearVelocityY
+    );
+
+    rb.linearVelocity = Vector2.SmoothDamp(
+        rb.linearVelocity, 
+        targetVelosity, 
+        ref velosityRef, 
+        smoothTime
+    );
+}
+   private int GetMaxJumps()
     {
-        targetVelosity = new Vector2(moveInput.x * moveSpeed, rb.linearVelocityY);
-        rb.linearVelocity = Vector2.SmoothDamp(rb.linearVelocity, targetVelosity, ref velosityRef, smoothTime);
+        if (playerWeight.WeightModifier >= overWeightLimit)
+        {
+            return 1;
+        }
+
+        return normalMaxJumps;
+    }
+    private float GetMoveSpeed()
+    {
+        if (playerWeight.WeightModifier >= overWeightLimit)
+        {
+            return overWeightMoveSpeed;
+        }
+
+        return moveSpeed;
     }
 
     
 
-     void OnJump(InputAction.CallbackContext context)
+    void OnJump(InputAction.CallbackContext context)
+{
+    if (!isAlive)
     {
-         if (!isAlive)
-         {
-            return;
-         }
-// allows player to jump until jumpcount is met 
-        if (jumpCount < maxJumpCount)
-         {
-            isGrounded = false;
-            jumpCount++;
-            rb.linearVelocityY = 0; 
-            rb.linearVelocityY = jumpForce;
-        }
-       
-           
-        
+        return;
     }
 
-    void OverEncombered(int encumbered)
+    if (jumpCount < GetMaxJumps())
     {
-        // a bit stuck here just need to figure out how to properly refrence goldpickup class
-        //my current plan is to get the refrence from gold pickup which adds a point to goldWeight
-        //once over the thresh hold it adds a jumpcount thus diabling double jump
-        if(goldWeight < 5)
-        {
-            jumpCount++;
-        }
+        Jump();
     }
+}
+
+    private void Jump()
+{
+    isGrounded = false;
+    jumpCount++;
+
+    rb.linearVelocityY = 0;
+    rb.linearVelocityY = jumpForce;
+}
+
+    
 
      void ClimbLadder()
     {

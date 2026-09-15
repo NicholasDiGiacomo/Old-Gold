@@ -1,19 +1,15 @@
 using UnityEngine;
-// handles logic for gold pickup 
+// Handles logic for gold pickup
 public class GoldPickup : MonoBehaviour
 {
-    [SerializeField] int WeightFoeGoldPickup = 1;
-     bool wasColllected = false;
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player") && !wasColllected)
+        PlayerWeight playerWeight = other.GetComponent<PlayerWeight>();
+
+        if (playerWeight != null)
         {
-            wasColllected = true;
-           
-            gameObject.SetActive(false);
-            Destroy(gameObject, 0.25f);
-            
-             
+            playerWeight.AddWeight(1);
+            Destroy(gameObject);
         }
     }
 
