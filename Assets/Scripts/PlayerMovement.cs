@@ -12,7 +12,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] bool wasGrounded; 
     [SerializeField] Transform groundCheck;
     [SerializeField] float checkRadius = 0.2f;
-    [SerializeField]  LayerMask whatIsGround;
+    [SerializeField] LayerMask whatIsGround;
     [SerializeField] private PlayerWeight playerWeight;
 
     
