@@ -3,6 +3,7 @@ using UnityEngine;
 public class WeightPickup : MonoBehaviour
 {
     [SerializeField] private int weightAmount = 1;
+    [SerializeField] private int valueAmount = 1;
     [SerializeField] private AudioClip pickupSound;
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -13,6 +14,7 @@ public class WeightPickup : MonoBehaviour
             return;
 
         playerWeight.AddWeight(weightAmount);
+        playerWeight.AddValue(valueAmount);
 
         if (pickupSound != null)
         {

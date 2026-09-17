@@ -140,7 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 243be9dfbfaa4a04fbad1954b841e8ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeightPickup
-  weightAmount: 1
+  weightAmount: 3
+  valueAmount: 5
   pickupSound: {fileID: 8300000, guid: a980678913af0d74ba36b8250757ba67, type: 3}
 --- !u!1 &8836421391382524278
 GameObject:
