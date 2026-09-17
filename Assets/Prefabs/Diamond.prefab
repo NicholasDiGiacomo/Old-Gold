@@ -114,6 +114,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82b49cfa43828943ad5e4be42da6954, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoldPickup
+  weightAmount: 1
+  pickupSound: {fileID: 8300000, guid: a980678913af0d74ba36b8250757ba67, type: 3}
 --- !u!1 &8836421391382524278
 GameObject:
   m_ObjectHideFlags: 0

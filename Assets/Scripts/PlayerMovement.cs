@@ -14,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float checkRadius = 0.2f;
     [SerializeField]  LayerMask whatIsGround;
     [SerializeField] private PlayerWeight playerWeight;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip jumpSound;
+    [SerializeField] private AudioClip landSound;
 
     
    
@@ -91,6 +94,7 @@ public class PlayerMovement : MonoBehaviour
          if(!wasGrounded && isGrounded)
         {
             jumpCount = 0; 
+           audioSource.PlayOneShot(landSound);
         }
 
         wasGrounded = isGrounded;
@@ -156,10 +160,12 @@ public class PlayerMovement : MonoBehaviour
     private void Jump()
 {
     isGrounded = false;
+    
     jumpCount++;
 
     rb.linearVelocityY = 0;
     rb.linearVelocityY = jumpForce;
+    audioSource.PlayOneShot(jumpSound);
 }
 
     
