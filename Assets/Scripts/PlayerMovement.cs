@@ -40,6 +40,7 @@ public class PlayerMovement : MonoBehaviour
     
 
     bool isAlive = true;
+    private Vector3 originalScale;
     
 
     const string GROUND_STRING = "Ground";
@@ -75,6 +76,7 @@ public class PlayerMovement : MonoBehaviour
         // extraJumps = extraJumpsValue;
 
         // baseGravity = rb.gravityScale;
+        originalScale = transform.localScale;
     }
 
     void Update()
@@ -199,7 +201,8 @@ public class PlayerMovement : MonoBehaviour
 
         if(hasHorozontalSpeed)
         {
-            transform.localScale = new Vector2(Mathf.Sign(rb.linearVelocity.x), 1f);
+            transform.localScale = new Vector3(Mathf.Sign(rb.linearVelocity.x) * Mathf.Abs(originalScale.x)
+            ,originalScale.y, originalScale.z);
         }
         
     }
