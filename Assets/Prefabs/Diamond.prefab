@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 4799297517132166112}
   - component: {fileID: 5759234765896750947}
   - component: {fileID: 2297209536087420794}
+  - component: {fileID: 7117726276012689353}
   m_Layer: 0
   m_Name: Diamond
   m_TagString: Untagged
@@ -127,6 +128,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79385db48b25f374a928840de0ea638c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemInfo
+--- !u!114 &7117726276012689353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2729742575668070382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 243be9dfbfaa4a04fbad1954b841e8ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WeightPickup
+  weightAmount: 1
+  pickupSound: {fileID: 8300000, guid: 30b78a778317e774f87a349037457ea9, type: 3}
 --- !u!1 &8836421391382524278
 GameObject:
   m_ObjectHideFlags: 0
