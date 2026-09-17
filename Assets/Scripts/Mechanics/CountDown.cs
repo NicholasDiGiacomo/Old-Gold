@@ -5,7 +5,7 @@ using UnityEngine;
 public class Countdown : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI Tmo;
-    public float Counter;
+    [SerializeField] public float Counter;
 
     private void Start()
     {
