@@ -1,16 +1,28 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EndingMenu : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private string gameSceneName = "Game";
+    [SerializeField] private string mainMenuSceneName = "MainMenu";
+    [SerializeField] private string creditsSceneName = "Credits";
+
+    public void Replay()
     {
-        
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(gameSceneName);
     }
 
-    // Update is called once per frame
-    void Update()
+    public void MainMenu()
     {
-        
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(mainMenuSceneName);
+    }
+
+    public void Credits()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(creditsSceneName);
     }
 }
+
