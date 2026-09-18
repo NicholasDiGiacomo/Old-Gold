@@ -2,29 +2,64 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    public float Upspeed;
-    [SerializeField] Rigidbody2D Rb;
+    [SerializeField] private float upSpeed;
+    [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private Countdown countdown;
+    [SerializeField] private EndingManager endingManager;
 
-    [SerializeField] Countdown Cd;
-    float Counter;
-
-    //[SerializeField] GameObject player;
+    private bool playerKilled;
 
     private void Start()
     {
-        Upspeed = 0;
+        upSpeed = 0f;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
-        Counter = Cd.Counter;
+        if (playerKilled)
+        {
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
 
-        if (Counter > 30) { return; }
-        if (Counter > 20 && Counter < 30) { Upspeed = 1f; }
-        else if (Counter > 10 && Counter < 20) {  Upspeed = 2f; }
-        else if (Counter > 5 && Counter < 10) { Upspeed = 4f; }
-        else { Upspeed = 6f; }
+        float counter = countdown.Counter;
 
-        Rb.linearVelocity = new Vector2 (0, Upspeed);
+        if (counter > 30f)
+        {
+            upSpeed = 0f;
+        }
+        else if (counter > 20f)
+        {
+            upSpeed = 1f;
+        }
+        else if (counter > 10f)
+        {
+            upSpeed = 2f;
+        }
+        else if (counter > 5f)
+        {
+            upSpeed = 4f;
+        }
+        else
+        {
+            upSpeed = 6f;
+        }
+
+        rb.linearVelocity = new Vector2(0f, upSpeed);
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (playerKilled)
+            return;
+
+        if (!other.CompareTag("Player"))
+            return;
+
+        playerKilled = true;
+
+        rb.linearVelocity = Vector2.zero;
+
+        endingManager.PlayerDied();
     }
 }

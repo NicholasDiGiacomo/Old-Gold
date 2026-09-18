@@ -1066,6 +1066,7 @@ GameObject:
   - component: {fileID: 216092032}
   - component: {fileID: 216092035}
   - component: {fileID: 216092034}
+  - component: {fileID: 216092036}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -14265,6 +14266,22 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!114 &216092036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216092030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: acd0a47abe4b0c84cb704eb0df756498, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Lava
+  upSpeed: 0
+  rb: {fileID: 216092034}
+  countdown: {fileID: 1573457304}
+  endingManager: {fileID: 893183677}
 --- !u!1001 &227375866
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23424,7 +23441,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1573457302}
   - component: {fileID: 1573457301}
-  - component: {fileID: 1573457303}
   - component: {fileID: 1573457304}
   m_Layer: 0
   m_Name: Lava
@@ -23461,21 +23477,6 @@ Transform:
   - {fileID: 216092031}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1573457303
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1573457300}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: acd0a47abe4b0c84cb704eb0df756498, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Lava
-  Upspeed: 0
-  Rb: {fileID: 216092034}
-  Cd: {fileID: 1573457304}
 --- !u!114 &1573457304
 MonoBehaviour:
   m_ObjectHideFlags: 0
