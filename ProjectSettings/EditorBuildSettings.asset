@@ -5,7 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-<<<<<<< Updated upstream
   - enabled: 0
     path: Assets/Scenes/TestingLevel.unity
     guid: a14f5ce694eb89649b0566c96b7bb4ec
@@ -21,30 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/InGame/Credits.unity
     guid: dcfd1b907f1cb164b9d1c25093104fbf
-=======
->>>>>>> Stashed changes
   - enabled: 1
     path: Assets/Scenes/Menus/MainMenu.unity
     guid: f05a7d94b4d792045a37d75615c48d4e
   - enabled: 1
     path: Assets/Scenes/Game.unity
-<<<<<<< Updated upstream
     guid: 815710362c730d044822f41024165f33
-=======
-    guid: a14f5ce694eb89649b0566c96b7bb4ec
-  - enabled: 0
-    path: Assets/Scenes/Menus/PauseMenu.unity
-    guid: b39f4856b76a6184d8dd7f5c2e706b77
-  - enabled: 0
-    path: Assets/Scenes/InGame/Settings.unity
-    guid: 649fc0bbc4a5ad8479ee174d555bcb7f
-  - enabled: 0
-    path: Assets/Scenes/InGame/Inventory.unity
-    guid: 9c344d5bd576fac4da25ced5873b2322
-  - enabled: 0
-    path: Assets/Scenes/InGame/Credits.unity
-    guid: dcfd1b907f1cb164b9d1c25093104fbf
->>>>>>> Stashed changes
   m_configObjects:
     com.unity.dt.app-ui: {fileID: 11400000, guid: 1b1c20d82303e4b5781c3ef50ac1449f, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
