@@ -148,7 +148,7 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""46d26032-51c5-4deb-a0f8-155b7c4281c9"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/z"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -269,7 +269,7 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""198d698e-eb09-40ef-888f-ca42905d3bb1"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -505,7 +505,7 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0e777df7-35d3-4c0f-a391-c6387327b3f4"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/k"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",

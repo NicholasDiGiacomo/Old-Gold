@@ -14342,7 +14342,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 240, y: -216}
+=======
+  m_AnchoredPosition: {x: 160, y: -144}
+>>>>>>> Stashed changes
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &258246626
@@ -17381,8 +17385,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82d5abb75fa4ab042b6a103131b7fb24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Countdown
+<<<<<<< Updated upstream
   Tmo: {fileID: 984238890}
   Counter: 0
+=======
+>>>>>>> Stashed changes
 --- !u!1 &680567273
 GameObject:
   m_ObjectHideFlags: 0
@@ -18858,7 +18865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 2
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -19072,7 +19079,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 240, y: -72}
+=======
+  m_AnchoredPosition: {x: 160, y: -48}
+>>>>>>> Stashed changes
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &954699340
@@ -25550,7 +25561,11 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
+<<<<<<< Updated upstream
   m_AnchoredPosition: {x: 240, y: -360}
+=======
+  m_AnchoredPosition: {x: 160, y: -240}
+>>>>>>> Stashed changes
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2036891540
