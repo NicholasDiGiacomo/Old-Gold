@@ -1,5 +1,20 @@
 using UnityEngine;
 
+
+//
+// INVENTORY INTEGRATION NOTES
+//
+// This script currently stores the player's collected items:
+// GoldBars, Rocks, Diamonds, and CopperNuggets.
+//
+// It also calculates WeightModifier and CollectedValue.
+//
+// TODO (Inventory):
+// Read these existing properties to display item counts and totals.
+// Avoid maintaining a separate set of item counts in the UI,
+// as the two sets of values could become out of sync.
+//
+
 public class PlayerWeight : MonoBehaviour
 {
     [Header("Gold Bar")]
@@ -20,6 +35,9 @@ public class PlayerWeight : MonoBehaviour
 
     [SerializeField] Animator animator;
 
+    
+
+
     // Item counts
     public int GoldBars { get; private set; }
     public int Rocks { get; private set; }
@@ -33,7 +51,16 @@ public class PlayerWeight : MonoBehaviour
     // -------------------------
     // ADD ITEMS
     // -------------------------
-
+// TODO (Inventory):
+// These methods are called when the player collects an item.
+//
+// After an item is added, the inventory UI should refresh to
+// display the updated count, total weight, and total value.
+//
+// Possible approach:
+// Add an OnInventoryChanged event to PlayerWeight and invoke it
+// whenever an item is added or removed. The inventory UI can
+// subscribe to that event instead of checking every frame.
     public void AddGoldBar()
     {
         GoldBars++;
@@ -70,6 +97,16 @@ public class PlayerWeight : MonoBehaviour
     // REMOVE ITEMS
     // -------------------------
 
+// TODO (Inventory):
+// These methods already handle removing items and updating totals.
+//
+// If the inventory allows the player to drop or discard items,
+// call the corresponding Remove method.
+//
+// Each method returns false if the player does not have that item.
+// Only update the UI or spawn a dropped item if removal succeeds.
+//
+// Remember to refresh the inventory display after a successful removal.
     public bool RemoveGoldBar()
     {
         if (GoldBars <= 0)
