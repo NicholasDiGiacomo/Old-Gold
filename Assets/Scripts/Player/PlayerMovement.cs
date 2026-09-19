@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private AudioClip landSound;
     [SerializeField] private EndingManager endingManager;
 
+    //to animate player
+    [SerializeField] private Animator animator;
+
     
    
     private int normalMaxJumps = 2;
@@ -94,6 +97,12 @@ public class PlayerMovement : MonoBehaviour
             SceneManager.LoadSceneAsync("PauseMenu", LoadSceneMode.Additive);
         }
 
+        //changes animations between idle, running, jumping, dying, picking up items
+        float input = Input.GetAxis("Horizontal");
+        if (input != 0) { animator.SetBool("IsRunning", true); Debug.Log(animator.GetBool("IsRunning")); }
+        else { animator.SetBool("IsRunning", false); Debug.Log(animator.GetBool("IsRunning")); }
+        
+
             moveInput = controller.Player.Move.ReadValue<Vector2>();
 
 // checks to see if player is touching the ground there is a gameobject at base of player 
@@ -163,6 +172,7 @@ public class PlayerMovement : MonoBehaviour
     if (jumpCount < GetMaxJumps())
     {
         Jump();
+        animator.SetTrigger("IsJumping");
     }
 }
 

@@ -18,6 +18,8 @@ public class PlayerWeight : MonoBehaviour
     [SerializeField] private int copperWeight = 2;
     [SerializeField] private int copperValue = 3;
 
+    [SerializeField] Animator animator;
+
     // Item counts
     public int GoldBars { get; private set; }
     public int Rocks { get; private set; }
@@ -37,6 +39,7 @@ public class PlayerWeight : MonoBehaviour
         GoldBars++;
         WeightModifier += goldWeight;
         CollectedValue += goldValue;
+        animator.SetTrigger("PickedUp");
     }
 
     public void AddRock()
@@ -44,6 +47,7 @@ public class PlayerWeight : MonoBehaviour
         Rocks++;
         WeightModifier += rockWeight;
         CollectedValue += rockValue;
+        animator.SetTrigger("PickedUp");
     }
 
     public void AddDiamond()
@@ -51,6 +55,7 @@ public class PlayerWeight : MonoBehaviour
         Diamonds++;
         WeightModifier += diamondWeight;
         CollectedValue += diamondValue;
+        animator.SetTrigger("PickedUp");
     }
 
     public void AddCopperNugget()
@@ -58,6 +63,7 @@ public class PlayerWeight : MonoBehaviour
         CopperNuggets++;
         WeightModifier += copperWeight;
         CollectedValue += copperValue;
+        animator.SetTrigger("PickedUp");
     }
 
     // -------------------------
@@ -72,6 +78,7 @@ public class PlayerWeight : MonoBehaviour
         GoldBars--;
         WeightModifier -= goldWeight;
         CollectedValue -= goldValue;
+        animator.SetTrigger("PickedUp");
 
         return true;
     }
@@ -84,6 +91,7 @@ public class PlayerWeight : MonoBehaviour
         Rocks--;
         WeightModifier -= rockWeight;
         CollectedValue -= rockValue;
+        animator.SetTrigger("PickedUp");
 
         return true;
     }
@@ -96,6 +104,7 @@ public class PlayerWeight : MonoBehaviour
         Diamonds--;
         WeightModifier -= diamondWeight;
         CollectedValue -= diamondValue;
+        animator.SetTrigger("PickedUp");
 
         return true;
     }
@@ -108,6 +117,7 @@ public class PlayerWeight : MonoBehaviour
         CopperNuggets--;
         WeightModifier -= copperWeight;
         CollectedValue -= copperValue;
+        animator.SetTrigger("PickedUp");
 
         return true;
     }

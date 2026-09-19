@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 4799297517132166112}
   - component: {fileID: 8053778585665737933}
   - component: {fileID: -5757527072605036952}
-  - component: {fileID: 3692762834819632849}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -128,21 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98446590e3115fb45980d8e99a9a4bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoldPickup
---- !u!114 &3692762834819632849
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2729742575668070382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 243be9dfbfaa4a04fbad1954b841e8ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WeightPickup
-  weightAmount: 4
-  valueAmount: 1
-  pickupSound: {fileID: 8300000, guid: a980678913af0d74ba36b8250757ba67, type: 3}
+  pickupSound: {fileID: 0}
 --- !u!1 &8836421391382524278
 GameObject:
   m_ObjectHideFlags: 0
@@ -222,7 +207,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_MaskInteraction: 0
   m_Sprite: {fileID: 795079491, guid: c9fdfdca940334b4ba4ee13efa067a32, type: 3}
   m_Color: {r: 1, g: 0.774827, b: 0, a: 1}

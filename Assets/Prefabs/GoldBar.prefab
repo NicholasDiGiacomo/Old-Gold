@@ -44,7 +44,6 @@ GameObject:
   - component: {fileID: 4799297517132166112}
   - component: {fileID: 31425264280124786}
   - component: {fileID: 1610893861694654780}
-  - component: {fileID: 6918017421169209929}
   m_Layer: 0
   m_Name: GoldBar
   m_TagString: Untagged
@@ -116,6 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98446590e3115fb45980d8e99a9a4bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoldPickup
+  pickupSound: {fileID: 0}
 --- !u!114 &1610893861694654780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,21 +128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79385db48b25f374a928840de0ea638c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemInfo
---- !u!114 &6918017421169209929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2729742575668070382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 243be9dfbfaa4a04fbad1954b841e8ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WeightPickup
-  weightAmount: 3
-  valueAmount: 5
-  pickupSound: {fileID: 8300000, guid: a980678913af0d74ba36b8250757ba67, type: 3}
 --- !u!1 &8836421391382524278
 GameObject:
   m_ObjectHideFlags: 0
