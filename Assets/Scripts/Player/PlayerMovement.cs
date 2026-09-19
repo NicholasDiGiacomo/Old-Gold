@@ -122,10 +122,10 @@ public class PlayerMovement : MonoBehaviour
          {
              return;
          }
-        
+        //  Run();
          FlipSprite();
-       
-        
+        ClimbLadder();
+        Die(); 
     }
     void FixedUpdate()
 {
@@ -189,7 +189,36 @@ public class PlayerMovement : MonoBehaviour
 
     
 
-     
+     void ClimbLadder()
+    {
+    //      if (!mainCollider.IsTouchingLayers(LayerMask.GetMask(LADDER_STRING)))
+    //     {
+    //         rb.gravityScale = baseGravity;
+    //         return;
+    //         // myAnimator.SetBool("isClimbing", false);
+    //     }
+    //    Vector2 climbVelocity = new Vector2 ( rb.linearVelocity.x, moveInput.y * climbSpeed);
+    //     rb.linearVelocity = climbVelocity;
+    //     rb.gravityScale = 0f;
+
+    //     bool hasVertacleSpeed = Mathf.Abs(rb.linearVelocity.y) > Mathf.Epsilon;
+
+       
+            // myAnimator.SetBool("isClimbing", hasVertacleSpeed);
+    }
+
+    //  void Run()
+    // {
+    //     Vector2 playerVelocity = new Vector2 (moveInput.x * moveSpeed , rb.linearVelocity.y);
+    //     rb.linearVelocity = playerVelocity;
+
+    //     bool hasHorozontalSpeed = Mathf.Abs(rb.linearVelocity.x) > Mathf.Epsilon;
+
+       
+    //         // myAnimator.SetBool("isRunning", hasHorozontalSpeed);
+        
+        
+    // }
 
      void FlipSprite()
     {
@@ -205,5 +234,15 @@ public class PlayerMovement : MonoBehaviour
 
     
 
-   
+    void Die()
+    {
+        // if(mainCollider.IsTouchingLayers(LayerMask.GetMask(ENEMY_STRING, HAZZARD_STRING)))
+        // {
+        //     isAlive = false;
+        //     // myAnimator.SetTrigger("Dying");
+        //     // rB.linearVelocity = deathKick;
+        //     // FindAnyObjectByType<GameSession>().ProcessPlayerDeath(); 
+           
+        // }
+    }
 }

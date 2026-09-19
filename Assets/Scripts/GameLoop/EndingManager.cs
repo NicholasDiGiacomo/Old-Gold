@@ -1,12 +1,7 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
-using System.Collections;
-
 
 public class EndingManager : MonoBehaviour
 {
-    [Header("Menu Navigation")]
-    [SerializeField] private GameObject replayButton;
     [SerializeField] private int debtAmount = 20;
 
     [Header("Ending Screens")]
@@ -21,16 +16,11 @@ public class EndingManager : MonoBehaviour
     private int currentScreen;
     private bool endingActive;
 
-    private bool endingTriggered = false;
-
     public bool IsEndingActive => endingActive;
-    public bool HasEndingTriggered => endingTriggered;
-
-    
 
     public void ReachExit(int collectedValue)
     {
-        if (endingTriggered)
+        if (endingActive)
             return;
 
         if (collectedValue >= debtAmount)
@@ -41,7 +31,7 @@ public class EndingManager : MonoBehaviour
 
     public void PlayerDied()
     {
-        if (endingTriggered)
+        if (endingActive)
             return;
 
         StartEnding(deathScreens);
@@ -49,15 +39,7 @@ public class EndingManager : MonoBehaviour
 
     private void StartEnding(GameObject[] screens)
     {
-        if (endingTriggered)
-            return;
-
-        endingTriggered = true;
         endingActive = true;
-
-        // Stop gameplay.
-        Time.timeScale = 0f;
-
         currentEnding = screens;
         currentScreen = 0;
 
@@ -85,23 +67,10 @@ public class EndingManager : MonoBehaviour
     }
 
     private void FinishEnding()
-{
-    endingActive = false;
-
-    endingMenu.SetActive(true);
-
-    StartCoroutine(SelectReplayNextFrame());
-}
-
-private IEnumerator SelectReplayNextFrame()
-{
-    // Wait until the Interact press that closed the ending
-    // has finished being processed.
-    yield return null;
-
-    EventSystem.current.SetSelectedGameObject(null);
-    EventSystem.current.SetSelectedGameObject(replayButton);
-}
+    {
+        endingActive = false;
+        endingMenu.SetActive(true);
+    }
 
     private void DisableAllScreens()
     {
