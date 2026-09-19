@@ -42,8 +42,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1602627244640056952}
   - component: {fileID: 4799297517132166112}
-  - component: {fileID: 5759234765896750947}
   - component: {fileID: 2297209536087420794}
+  - component: {fileID: -5071113701427478521}
   m_Layer: 0
   m_Name: Diamond
   m_TagString: Untagged
@@ -103,19 +103,6 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
---- !u!114 &5759234765896750947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2729742575668070382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98446590e3115fb45980d8e99a9a4bd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GoldPickup
-  pickupSound: {fileID: 0}
 --- !u!114 &2297209536087420794
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,6 +115,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79385db48b25f374a928840de0ea638c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ItemInfo
+--- !u!114 &-5071113701427478521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2729742575668070382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b262faff6cd282949bcec2782de6a5bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DiamondPickup
+  pickupSound: {fileID: 8300000, guid: 30b78a778317e774f87a349037457ea9, type: 3}
 --- !u!1 &8836421391382524278
 GameObject:
   m_ObjectHideFlags: 0
