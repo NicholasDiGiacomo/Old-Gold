@@ -1,20 +1,114 @@
-
 using UnityEngine;
 
 public class PlayerWeight : MonoBehaviour
 {
-    public int WeightModifier { get; private set; }
-     public int CollectedValue { get; private set; }
+    [Header("Gold Bar")]
+    [SerializeField] private int goldWeight = 3;
+    [SerializeField] private int goldValue = 5;
 
-    public void AddWeight(int amount)
+    [Header("Rock")]
+    [SerializeField] private int rockWeight = 5;
+    [SerializeField] private int rockValue = 1;
+
+    [Header("Diamond")]
+    [SerializeField] private int diamondWeight = 5;
+    [SerializeField] private int diamondValue = 10;
+
+    [Header("Copper")]
+    [SerializeField] private int copperWeight = 2;
+    [SerializeField] private int copperValue = 3;
+
+    // Item counts
+    public int GoldBars { get; private set; }
+    public int Rocks { get; private set; }
+    public int Diamonds { get; private set; }
+    public int CopperNuggets { get; private set; }
+
+    // Totals
+    public int WeightModifier { get; private set; }
+    public int CollectedValue { get; private set; }
+
+    // -------------------------
+    // ADD ITEMS
+    // -------------------------
+
+    public void AddGoldBar()
     {
-        WeightModifier += amount;
+        GoldBars++;
+        WeightModifier += goldWeight;
+        CollectedValue += goldValue;
     }
 
-    public void AddValue(int amount)
+    public void AddRock()
     {
-         CollectedValue += amount;
+        Rocks++;
+        WeightModifier += rockWeight;
+        CollectedValue += rockValue;
+    }
 
-        Debug.Log("Collected Value: " + CollectedValue);
+    public void AddDiamond()
+    {
+        Diamonds++;
+        WeightModifier += diamondWeight;
+        CollectedValue += diamondValue;
+    }
+
+    public void AddCopperNugget()
+    {
+        CopperNuggets++;
+        WeightModifier += copperWeight;
+        CollectedValue += copperValue;
+    }
+
+    // -------------------------
+    // REMOVE ITEMS
+    // -------------------------
+
+    public bool RemoveGoldBar()
+    {
+        if (GoldBars <= 0)
+            return false;
+
+        GoldBars--;
+        WeightModifier -= goldWeight;
+        CollectedValue -= goldValue;
+
+        return true;
+    }
+
+    public bool RemoveRock()
+    {
+        if (Rocks <= 0)
+            return false;
+
+        Rocks--;
+        WeightModifier -= rockWeight;
+        CollectedValue -= rockValue;
+
+        return true;
+    }
+
+    public bool RemoveDiamond()
+    {
+        if (Diamonds <= 0)
+            return false;
+
+        Diamonds--;
+        WeightModifier -= diamondWeight;
+        CollectedValue -= diamondValue;
+
+        return true;
+    }
+
+    public bool RemoveCopperNugget()
+    {
+        if (CopperNuggets <= 0)
+            return false;
+
+        CopperNuggets--;
+        WeightModifier -= copperWeight;
+        CollectedValue -= copperValue;
+
+        return true;
     }
 }

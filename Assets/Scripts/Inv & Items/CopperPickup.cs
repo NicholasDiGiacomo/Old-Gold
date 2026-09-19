@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class GoldPickup : MonoBehaviour
+public class CopperPickup : MonoBehaviour
 {
     [SerializeField] private AudioClip pickupSound;
 
@@ -11,7 +11,7 @@ public class GoldPickup : MonoBehaviour
         if (playerWeight == null)
             return;
 
-        playerWeight.AddGoldBar();
+        playerWeight.AddCopperNugget();
 
         if (pickupSound != null)
             AudioSource.PlayClipAtPoint(pickupSound, transform.position);
