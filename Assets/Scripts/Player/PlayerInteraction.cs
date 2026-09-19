@@ -19,6 +19,16 @@ public class PlayerInteraction : MonoBehaviour
             nearbyPickup = null;
     }
 
+
+// TODO (Inventory):
+// This method handles the player's Interact input.
+//
+// Ending dialogue currently takes priority over item collection.
+// If inventory interactions are added here later, preserve that
+// priority so pressing E during an ending advances the ending.
+//
+// The inventory UI itself should not call nearbyPickup.Collect()
+// just to display or inspect an item.
     public void OnInteract()
     {
         // Ending panels take priority over collecting items.

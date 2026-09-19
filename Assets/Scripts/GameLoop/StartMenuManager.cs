@@ -25,7 +25,7 @@ public class StartMenuManager : MonoBehaviour
 
         //E
         bool keyboardInteract = Keyboard.current != null
-        && Keyboard.current.eKey.wasPressedThisFrame;
+        && Keyboard.current.kKey.wasPressedThisFrame;
 
         // gamepad west
         bool gamepandInteract = Gamepad.current != null 
