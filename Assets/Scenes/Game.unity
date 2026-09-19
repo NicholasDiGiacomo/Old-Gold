@@ -14343,11 +14343,15 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_AnchoredPosition: {x: 240, y: -216}
 =======
   m_AnchoredPosition: {x: 160, y: -144}
 >>>>>>> Stashed changes
+=======
+  m_AnchoredPosition: {x: 80, y: -72}
+>>>>>>> parent of c753b34 (fixed endgame issures)
 =======
   m_AnchoredPosition: {x: 80, y: -72}
 >>>>>>> parent of c753b34 (fixed endgame issures)
@@ -19100,11 +19104,15 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_AnchoredPosition: {x: 240, y: -72}
 =======
   m_AnchoredPosition: {x: 160, y: -48}
 >>>>>>> Stashed changes
+=======
+  m_AnchoredPosition: {x: 80, y: -24}
+>>>>>>> parent of c753b34 (fixed endgame issures)
 =======
   m_AnchoredPosition: {x: 80, y: -24}
 >>>>>>> parent of c753b34 (fixed endgame issures)
@@ -25586,11 +25594,15 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
 <<<<<<< HEAD
+<<<<<<< HEAD
 <<<<<<< Updated upstream
   m_AnchoredPosition: {x: 240, y: -360}
 =======
   m_AnchoredPosition: {x: 160, y: -240}
 >>>>>>> Stashed changes
+=======
+  m_AnchoredPosition: {x: 80, y: -120}
+>>>>>>> parent of c753b34 (fixed endgame issures)
 =======
   m_AnchoredPosition: {x: 80, y: -120}
 >>>>>>> parent of c753b34 (fixed endgame issures)
