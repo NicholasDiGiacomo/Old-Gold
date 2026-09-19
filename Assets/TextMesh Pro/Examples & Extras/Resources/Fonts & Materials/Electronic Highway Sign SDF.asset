@@ -170,6 +170,7 @@ MonoBehaviour:
   m_AtlasPopulationMode: 1
   InternalDynamicOS: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_GlyphTable: []
   m_CharacterTable: []
 =======
@@ -369,6 +370,10 @@ MonoBehaviour:
 >>>>>>> parent of c753b34 (fixed endgame issures)
 =======
 >>>>>>> parent of c753b34 (fixed endgame issures)
+=======
+  m_GlyphTable: []
+  m_CharacterTable: []
+>>>>>>> parent of 02bbe76 (removed borders)
   m_AtlasTextures:
   - {fileID: 28981121099961358}
   m_AtlasTextureIndex: 0
@@ -379,6 +384,7 @@ MonoBehaviour:
   m_AtlasHeight: 1024
   m_AtlasPadding: 10
   m_AtlasRenderMode: 4165
+<<<<<<< HEAD
 <<<<<<< HEAD
   m_UsedGlyphRects: []
 =======
@@ -443,6 +449,13 @@ MonoBehaviour:
 >>>>>>> parent of c753b34 (fixed endgame issures)
 =======
 >>>>>>> parent of c753b34 (fixed endgame issures)
+=======
+  m_UsedGlyphRects: []
+  m_FreeGlyphRects:
+  - m_X: 0
+    m_Y: 0
+    m_Width: 1023
+>>>>>>> parent of 02bbe76 (removed borders)
     m_Height: 1023
   m_FontFeatureTable:
     m_MultipleSubstitutionRecords: []
@@ -567,6 +580,7 @@ Texture2D:
   m_ColorSpace: 0
   m_PlatformBlob: 
 <<<<<<< HEAD
+<<<<<<< HEAD
   image data: 1
   _typelessdata: 00
 =======
@@ -576,6 +590,10 @@ Texture2D:
 >>>>>>> parent of c753b34 (fixed endgame issures)
 =======
 >>>>>>> parent of c753b34 (fixed endgame issures)
+=======
+  image data: 1
+  _typelessdata: 00
+>>>>>>> parent of 02bbe76 (removed borders)
   m_StreamData:
     serializedVersion: 2
     offset: 0
