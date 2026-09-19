@@ -14367,9 +14367,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.9254902, b: 0, a: 1}
+    m_PressedColor: {r: 0.58431375, g: 0.53333336, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.99215686, b: 0.5803922, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -18931,6 +18931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd3368e603543934488f968f50d6de11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndingManager
+  replayButton: {fileID: 954699338}
   debtAmount: 20
   debtPaidScreens:
   - {fileID: 2103115301}
@@ -19096,10 +19097,10 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_HighlightedColor: {r: 1, g: 0.9267906, b: 0, a: 1}
+    m_PressedColor: {r: 0.5849056, g: 0.5346404, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.9936209, b: 0.5801887, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.54901963}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -25574,9 +25575,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.9254902, b: 0, a: 1}
+    m_PressedColor: {r: 0.58431375, g: 0.53333336, b: 0, a: 1}
+    m_SelectedColor: {r: 1, g: 0.99215686, b: 0.5803922, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
