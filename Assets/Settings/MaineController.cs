@@ -157,6 +157,17 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
+                    ""name"": """",
+                    ""id"": ""37d98f56-898f-4ff1-b138-2cb856a7756f"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Jump"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
                     ""name"": ""2D Vector"",
                     ""id"": ""06c243c5-5d7f-43e8-b48e-e85689a23e70"",
                     ""path"": ""2DVector"",

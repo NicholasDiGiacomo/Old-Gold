@@ -1,8 +1,12 @@
 using UnityEngine;
+using System.Collections;
+using UnityEngine.EventSystems;
 
 public class EndingManager : MonoBehaviour
 {
     [SerializeField] private int debtAmount = 20;
+    [Header("Menu Navigation")]
+    [SerializeField] private GameObject replayButton;
 
     [Header("Ending Screens")]
     [SerializeField] private GameObject[] debtPaidScreens;
@@ -67,10 +71,23 @@ public class EndingManager : MonoBehaviour
     }
 
     private void FinishEnding()
-    {
-        endingActive = false;
-        endingMenu.SetActive(true);
-    }
+{
+    endingActive = false;
+
+    endingMenu.SetActive(true);
+
+    StartCoroutine(SelectReplayNextFrame());
+}
+
+private IEnumerator SelectReplayNextFrame()
+{
+    // Wait until the Interact press that closed the ending
+    // has finished being processed.
+    yield return null;
+
+    EventSystem.current.SetSelectedGameObject(null);
+    EventSystem.current.SetSelectedGameObject(replayButton);
+}
 
     private void DisableAllScreens()
     {
