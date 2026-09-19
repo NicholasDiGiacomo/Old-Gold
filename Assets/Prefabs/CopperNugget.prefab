@@ -134,6 +134,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2806829838595735865}
   - component: {fileID: 2420562663842473187}
+  - component: {fileID: 5604212055879004179}
   m_Layer: 0
   m_Name: CopperNugget
   m_TagString: Untagged
@@ -193,3 +194,16 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &5604212055879004179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8094231735517011725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9df6b750d90db48a63770361f3d785, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CopperPickup
+  pickupSound: {fileID: 8300000, guid: a980678913af0d74ba36b8250757ba67, type: 3}
