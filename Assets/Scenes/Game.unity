@@ -16164,9 +16164,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b1fdbe75547f948af32d121773ddaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  moveSpeed: 10
-  overWeightMoveSpeed: 5
-  overWeightLimit: 50
+  moveSpeed: 6
+  overWeightMoveSpeed: 4
+  overWeightLimit: 25
   jumpForce: 5
   isGrounded: 0
   wasGrounded: 0
@@ -23496,7 +23496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Countdown
   Tmo: {fileID: 984238890}
-  Counter: 0
+  Counter: 120
 --- !u!1001 &1612112181
 PrefabInstance:
   m_ObjectHideFlags: 0
