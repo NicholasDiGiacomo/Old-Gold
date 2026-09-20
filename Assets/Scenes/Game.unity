@@ -16164,6 +16164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1b1fdbe75547f948af32d121773ddaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
+  allowLedgeJump: 1
   moveSpeed: 6
   overWeightMoveSpeed: 4
   overWeightLimit: 25

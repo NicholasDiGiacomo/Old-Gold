@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Set to true: walking off a ledge allows one midair jump.
+    // Set to false: walking off a ledge allows no jumps.
+    [SerializeField] private bool allowLedgeJump = true;
     [SerializeField] float moveSpeed = 1f;
     [SerializeField] float overWeightMoveSpeed = 0.5f;
     [SerializeField] int overWeightLimit = 5;
@@ -105,18 +108,41 @@ public class PlayerMovement : MonoBehaviour
 
             moveInput = controller.Player.Move.ReadValue<Vector2>();
 
-// checks to see if player is touching the ground there is a gameobject at base of player 
-// also checks if what player standing on is in the groumd layer
-         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
+            isGrounded = Physics2D.OverlapCircle(
+            groundCheck.position,
+         checkRadius,
+            whatIsGround
+        );
 
-         if(!wasGrounded && isGrounded)
+        // Just landed: reset the jump counter.
+        if (!wasGrounded && isGrounded)
         {
-            jumpCount = 0; 
-           audioSource.PlayOneShot(landSound);
+            jumpCount = 0;
+            audioSource.PlayOneShot(landSound);
+        }
+
+        // Just left the ground.
+        if (wasGrounded && !isGrounded)
+        {
+            // Only apply the ledge rule if the player has not jumped.
+            if (jumpCount == 0)
+            {
+                if (allowLedgeJump)
+                {
+                    // MODE A: Allow at most one midair jump.
+                    // If weight limits the player to one jump, this
+                    // correctly leaves no jumps available.
+                    jumpCount = Mathf.Max(1, GetMaxJumps() - 1);
+                }
+                else
+                {
+                    // MODE B: Walking off a ledge uses all available jumps.
+                    jumpCount = GetMaxJumps();
+                }
+            }
         }
 
         wasGrounded = isGrounded;
-
         
          if (!isAlive)
          {
