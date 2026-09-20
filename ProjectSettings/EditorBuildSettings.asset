@@ -13,10 +13,7 @@ EditorBuildSettings:
     guid: f05a7d94b4d792045a37d75615c48d4e
   - enabled: 1
     path: Assets/Scenes/Menus/PauseMenu.unity
-    guid: b39f4856b76a6184d8dd7f5c2e706b77
-  - enabled: 1
-    path: Assets/Scenes/InGame/Settings.unity
-    guid: 649fc0bbc4a5ad8479ee174d555bcb7f
+    guid: 6430fe1b299694e4897f2f1a028695d4
   - enabled: 1
     path: Assets/Scenes/InGame/Inventory.unity
     guid: 9c344d5bd576fac4da25ced5873b2322
