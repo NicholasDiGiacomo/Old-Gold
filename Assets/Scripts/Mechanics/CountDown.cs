@@ -5,11 +5,11 @@ using UnityEngine;
 public class Countdown : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI Tmo;
-    [SerializeField] public float Counter;
+    [SerializeField] public float Counter = 80;
 
     private void Start()
     {
-        Counter = 40;
+        Counter = 80;
     }
 
     private void Update()

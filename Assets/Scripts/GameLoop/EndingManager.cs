@@ -43,13 +43,21 @@ public class EndingManager : MonoBehaviour
 
     private void StartEnding(GameObject[] screens)
     {
-        endingActive = true;
-        currentEnding = screens;
-        currentScreen = 0;
+       if (endingActive)
+        return;
 
-        DisableAllScreens();
+    endingActive = true;
+    endingActive = true;
 
-        currentEnding[currentScreen].SetActive(true);
+    // Stop gameplay.
+    Time.timeScale = 0f;
+
+    currentEnding = screens;
+    currentScreen = 0;
+
+    DisableAllScreens();
+
+    currentEnding[currentScreen].SetActive(true);
     }
 
     public void AdvanceEnding()
