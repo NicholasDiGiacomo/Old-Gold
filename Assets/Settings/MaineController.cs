@@ -526,6 +526,17 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": """",
+                    ""id"": ""c95af61b-9cbb-4c30-a27d-739981d02772"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Submit"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""a7180836-57ce-4043-ac27-c6ff7b609b2d"",
                     ""path"": ""<Keyboard>/escape"",
                     ""interactions"": """",

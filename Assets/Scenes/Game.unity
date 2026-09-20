@@ -14342,7 +14342,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -216}
+  m_AnchoredPosition: {x: 160, y: -144}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &258246626
@@ -16213,7 +16213,7 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player
+  m_DefaultActionMap: UI
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 519420031}
 --- !u!114 &501712200
@@ -16846,7 +16846,7 @@ MonoBehaviour:
   m_XRTrackingOrigin: {fileID: 0}
   m_ActionsAsset: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_PointAction: {fileID: 0}
-  m_MoveAction: {fileID: -9136838822261687658, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_MoveAction: {fileID: -6454362293018224459, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_SubmitAction: {fileID: 1806997214363955304, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_CancelAction: {fileID: 7477445887278583909, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_LeftClickAction: {fileID: 0}
@@ -19074,7 +19074,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -72}
+  m_AnchoredPosition: {x: 160, y: -48}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &954699340
@@ -25552,7 +25552,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 240, y: -360}
+  m_AnchoredPosition: {x: 160, y: -240}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2036891540
@@ -26147,6 +26147,14 @@ PrefabInstance:
     - target: {fileID: 745274374037007363, guid: c8069515682d92842ad756c817d7bac3, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388887293670144025, guid: c8069515682d92842ad756c817d7bac3, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 52.516388
+      objectReference: {fileID: 0}
+    - target: {fileID: 1388887293670144025, guid: c8069515682d92842ad756c817d7bac3, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -11.319611
       objectReference: {fileID: 0}
     - target: {fileID: 1593798521910733412, guid: c8069515682d92842ad756c817d7bac3, type: 3}
       propertyPath: m_IsActive
