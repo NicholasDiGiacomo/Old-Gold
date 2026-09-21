@@ -94,10 +94,16 @@ public class PlayerMovement : MonoBehaviour
     {
         //pause menu
         //checks if game is already paused or not
-        bool Paused = SceneManager.GetSceneByName("PauseMenu").isLoaded;
-        if (Input.GetKeyDown(KeyCode.Escape) && !Paused)
+        
+        bool paused = SceneManager.GetSceneByName("PauseMenu").isLoaded;
+        bool inventoryOpen = SceneManager.GetSceneByName("Inventory").isLoaded;
+
+        if (Input.GetKeyDown(KeyCode.Escape) && !paused && !inventoryOpen)
         {
-            SceneManager.LoadSceneAsync("PauseMenu", LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(
+                "PauseMenu",
+                LoadSceneMode.Additive
+            );
         }
 
         //changes animations between idle, running, jumping, dying, picking up items
