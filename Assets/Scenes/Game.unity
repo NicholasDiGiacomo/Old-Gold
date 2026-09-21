@@ -23542,7 +23542,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Countdown
   Tmo: {fileID: 984238890}
-  Counter: 120
+  Counter: 95
 --- !u!1001 &1612112181
 PrefabInstance:
   m_ObjectHideFlags: 0
