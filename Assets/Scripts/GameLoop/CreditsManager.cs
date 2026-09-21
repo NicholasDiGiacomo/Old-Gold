@@ -22,6 +22,12 @@ public class CreditsManager : MonoBehaviour
             creditPanels[i].SetActive(i == currentPanel);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+            NextPanel();
+    }
+
     public void NextPanel()
     {
         if (creditPanels.Length == 0)
