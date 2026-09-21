@@ -14214,6 +14214,7 @@ MonoBehaviour:
   rb: {fileID: 216092034}
   countdown: {fileID: 1573457304}
   endingManager: {fileID: 893183677}
+  musicManager: {fileID: 519420035}
 --- !u!1 &258236446
 GameObject:
   m_ObjectHideFlags: 0
@@ -16418,6 +16419,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -16587,7 +16589,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: ee9348cfa61830d4ea6f0b2f5298b6cd, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -16672,6 +16674,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0e632fe78a703342ae533a6af54b065, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameMusicManager
+  musicSource: {fileID: 519420034}
+  gameplayMusic: {fileID: 8300000, guid: ee9348cfa61830d4ea6f0b2f5298b6cd, type: 3}
+  lavaMusic: {fileID: 8300000, guid: a219fa4d9123be9448b1e6066ffbfcb6, type: 3}
+  successMusic: {fileID: 8300000, guid: 25b7de290943cd44d98473de42cc1e54, type: 3}
+  failureMusic: {fileID: 8300000, guid: ce6342b39bddfcc49829c25086be352c, type: 3}
 --- !u!1 &526400875
 GameObject:
   m_ObjectHideFlags: 0
@@ -18946,6 +18965,7 @@ MonoBehaviour:
   deathScreens:
   - {fileID: 345502140}
   endingMenu: {fileID: 1750733989}
+  musicManager: {fileID: 519420035}
 --- !u!1 &920519479
 GameObject:
   m_ObjectHideFlags: 0

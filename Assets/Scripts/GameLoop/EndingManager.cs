@@ -15,6 +15,7 @@ public class EndingManager : MonoBehaviour
 
     [Header("Menu")]
     [SerializeField] private GameObject endingMenu;
+    [SerializeField] private GameMusicManager musicManager;
 
     private GameObject[] currentEnding;
     private int currentScreen;
@@ -23,23 +24,36 @@ public class EndingManager : MonoBehaviour
     public bool IsEndingActive => endingActive;
 
     public void ReachExit(int collectedValue)
-    {
-        if (endingActive)
-            return;
+        {
+            if (endingActive)
+             return;
 
-        if (collectedValue >= debtAmount)
-            StartEnding(debtPaidScreens);
-        else
-            StartEnding(enslavedScreens);
-    }
+            if (collectedValue >= debtAmount)
+            {
+                if (musicManager != null)
+                    musicManager.PlaySuccessMusic();
 
-    public void PlayerDied()
-    {
-        if (endingActive)
-            return;
+                StartEnding(debtPaidScreens);
+            }
+            else
+            {
+                if (musicManager != null)
+                    musicManager.PlayFailureMusic();
 
-        StartEnding(deathScreens);
-    }
+                StartEnding(enslavedScreens);
+            }
+        }
+
+public void PlayerDied()
+        {
+            if (endingActive)
+                return;
+
+            if (musicManager != null)
+                musicManager.PlayFailureMusic();
+
+            StartEnding(deathScreens);
+        }
 
     private void StartEnding(GameObject[] screens)
     {

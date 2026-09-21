@@ -6,6 +6,9 @@ public class Lava : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Countdown countdown;
     [SerializeField] private EndingManager endingManager;
+    [SerializeField] private GameMusicManager musicManager;
+
+    private bool lavaMusicStarted;
 
     private bool playerKilled;
 
@@ -23,6 +26,14 @@ public class Lava : MonoBehaviour
         }
 
         float counter = countdown.Counter;
+        // Switch music once when the lava begins rising.
+        if (!lavaMusicStarted && counter <= 30f)
+        {
+            lavaMusicStarted = true;
+
+            if (musicManager != null)
+                musicManager.PlayLavaMusic();
+        }
 
         if (counter > 30f)
         {
