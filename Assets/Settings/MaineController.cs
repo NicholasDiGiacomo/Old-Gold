@@ -131,13 +131,23 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""initialStateCheck"": true,
                     ""priority"": 0
+                },
+                {
+                    ""name"": ""Menu"",
+                    ""type"": ""Button"",
+                    ""id"": ""cc0976e9-1dcf-4bf5-bce4-b128f34d5518"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false,
+                    ""priority"": 0
                 }
             ],
             ""bindings"": [
                 {
                     ""name"": """",
                     ""id"": ""4bb8a9b3-5d6c-461b-99d5-92b57f8c27b7"",
-                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""path"": ""<Gamepad>/dpad/up"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -148,7 +158,7 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""37d98f56-898f-4ff1-b138-2cb856a7756f"",
-                    ""path"": ""<Keyboard>/space"",
+                    ""path"": ""<Keyboard>/w"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -353,6 +363,28 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
                     ""action"": ""InventoryNavagate"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""24512cb0-bb48-456a-b562-0f6587224e0a"",
+                    ""path"": ""<Keyboard>/l"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""96e79071-f799-41c6-8836-c87521e11318"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Menu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -538,7 +570,7 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a7180836-57ce-4043-ac27-c6ff7b609b2d"",
-                    ""path"": ""<Keyboard>/escape"",
+                    ""path"": ""<Keyboard>/l"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -549,7 +581,7 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""37b6a6b5-e65e-44a9-8529-2c0a1abb6de7"",
-                    ""path"": ""<Gamepad>/start"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -629,6 +661,7 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
         m_Player_Jump = m_Player.FindAction("Jump", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_InventoryNavagate = m_Player.FindAction("InventoryNavagate", throwIfNotFound: true);
+        m_Player_Menu = m_Player.FindAction("Menu", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navagate = m_UI.FindAction("Navagate", throwIfNotFound: true);
@@ -719,6 +752,7 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_Jump;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_InventoryNavagate;
+    private readonly InputAction m_Player_Menu;
     /// <summary>
     /// Provides access to input actions defined in input action map "Player".
     /// </summary>
@@ -746,6 +780,10 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Player/InventoryNavagate".
         /// </summary>
         public InputAction @InventoryNavagate => m_Wrapper.m_Player_InventoryNavagate;
+        /// <summary>
+        /// Provides access to the underlying input action "Player/Menu".
+        /// </summary>
+        public InputAction @Menu => m_Wrapper.m_Player_Menu;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -784,6 +822,9 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
             @InventoryNavagate.started += instance.OnInventoryNavagate;
             @InventoryNavagate.performed += instance.OnInventoryNavagate;
             @InventoryNavagate.canceled += instance.OnInventoryNavagate;
+            @Menu.started += instance.OnMenu;
+            @Menu.performed += instance.OnMenu;
+            @Menu.canceled += instance.OnMenu;
         }
 
         /// <summary>
@@ -807,6 +848,9 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
             @InventoryNavagate.started -= instance.OnInventoryNavagate;
             @InventoryNavagate.performed -= instance.OnInventoryNavagate;
             @InventoryNavagate.canceled -= instance.OnInventoryNavagate;
+            @Menu.started -= instance.OnMenu;
+            @Menu.performed -= instance.OnMenu;
+            @Menu.canceled -= instance.OnMenu;
         }
 
         /// <summary>
@@ -1058,6 +1102,13 @@ public partial class @MaineController: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnInventoryNavagate(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Menu" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnMenu(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "UI" which allows adding and removing callbacks.

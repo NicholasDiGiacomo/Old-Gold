@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Animator animator;
 
     
-   
+   private bool menuOpening;
     private int normalMaxJumps = 2;
     private int jumpCount;
     [SerializeField] float climbSpeed = 5f;
@@ -67,14 +67,20 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnEnable()
     {
-        controller.Enable();
         
+        controller.Enable();
+     SceneManager.sceneUnloaded += OnSceneUnloaded;
     }
 
-    void OnDisable()
+    private void OnDisable()
     {
-        controller.Disable();
-         controller.Player.Jump.performed -= OnJump;
+        SceneManager.sceneUnloaded -= OnSceneUnloaded;
+    }
+
+    private void OnSceneUnloaded(Scene scene)
+    {
+        if (scene.name == "PauseMenu")
+        menuOpening = false;
     }
 
 
@@ -92,19 +98,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //pause menu
-        //checks if game is already paused or not
         
-        bool paused = SceneManager.GetSceneByName("PauseMenu").isLoaded;
-        bool inventoryOpen = SceneManager.GetSceneByName("Inventory").isLoaded;
-
-        if (Input.GetKeyDown(KeyCode.Escape) && !paused && !inventoryOpen)
-        {
-            SceneManager.LoadSceneAsync(
-                "PauseMenu",
-                LoadSceneMode.Additive
-            );
-        }
 
         //changes animations between idle, running, jumping, dying, picking up items
         float input = Input.GetAxis("Horizontal");
@@ -277,4 +271,26 @@ public class PlayerMovement : MonoBehaviour
            
         // }
     }
+    public void OnMenu(InputValue value)
+{
+    if (!value.isPressed || menuOpening)
+        return;
+
+    bool paused =
+        SceneManager.GetSceneByName("PauseMenu").isLoaded;
+
+    bool inventoryOpen =
+        SceneManager.GetSceneByName("Inventory").isLoaded;
+
+    if (paused || inventoryOpen)
+        return;
+
+    // Set this BEFORE starting the asynchronous load.
+    menuOpening = true;
+
+    SceneManager.LoadSceneAsync(
+        "PauseMenu",
+        LoadSceneMode.Additive
+    );
+}
 }

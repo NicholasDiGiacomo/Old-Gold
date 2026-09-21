@@ -45,13 +45,23 @@
                     "interactions": "",
                     "initialStateCheck": true,
                     "priority": 0
+                },
+                {
+                    "name": "Menu",
+                    "type": "Button",
+                    "id": "cc0976e9-1dcf-4bf5-bce4-b128f34d5518",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
                 }
             ],
             "bindings": [
                 {
                     "name": "",
                     "id": "4bb8a9b3-5d6c-461b-99d5-92b57f8c27b7",
-                    "path": "<Gamepad>/buttonEast",
+                    "path": "<Gamepad>/dpad/up",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -62,7 +72,7 @@
                 {
                     "name": "",
                     "id": "37d98f56-898f-4ff1-b138-2cb856a7756f",
-                    "path": "<Keyboard>/space",
+                    "path": "<Keyboard>/w",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -267,6 +277,28 @@
                     "action": "InventoryNavagate",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "24512cb0-bb48-456a-b562-0f6587224e0a",
+                    "path": "<Keyboard>/l",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "96e79071-f799-41c6-8836-c87521e11318",
+                    "path": "<Gamepad>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Menu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -452,7 +484,7 @@
                 {
                     "name": "",
                     "id": "a7180836-57ce-4043-ac27-c6ff7b609b2d",
-                    "path": "<Keyboard>/escape",
+                    "path": "<Keyboard>/l",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -463,7 +495,7 @@
                 {
                     "name": "",
                     "id": "37b6a6b5-e65e-44a9-8529-2c0a1abb6de7",
-                    "path": "<Gamepad>/start",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

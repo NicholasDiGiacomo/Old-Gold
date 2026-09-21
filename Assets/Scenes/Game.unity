@@ -16168,7 +16168,7 @@ MonoBehaviour:
   allowLedgeJump: 1
   moveSpeed: 6
   overWeightMoveSpeed: 4
-  overWeightLimit: 25
+  overWeightLimit: 18
   jumpForce: 5
   isGrounded: 0
   wasGrounded: 0
@@ -16420,6 +16420,7 @@ GameObject:
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
   - component: {fileID: 519420035}
+  - component: {fileID: 519420036}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: Untagged
@@ -16691,6 +16692,30 @@ MonoBehaviour:
   lavaMusic: {fileID: 8300000, guid: a219fa4d9123be9448b1e6066ffbfcb6, type: 3}
   successMusic: {fileID: 8300000, guid: 25b7de290943cd44d98473de42cc1e54, type: 3}
   failureMusic: {fileID: 8300000, guid: ce6342b39bddfcc49829c25086be352c, type: 3}
+--- !u!114 &519420036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
+  m_ComponentVersion: 1
+  m_AssetsPPU: 16
+  m_RefResolutionX: 160
+  m_RefResolutionY: 144
+  m_CropFrame: 0
+  m_GridSnapping: 2
+  m_FilterMode: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &526400875
 GameObject:
   m_ObjectHideFlags: 0
@@ -18952,7 +18977,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd3368e603543934488f968f50d6de11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EndingManager
-  debtAmount: 20
+  debtAmount: 28
   replayButton: {fileID: 954699338}
   debtPaidScreens:
   - {fileID: 2103115301}
